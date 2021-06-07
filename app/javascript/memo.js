@@ -17,6 +17,8 @@ function post (){
     XHR.send(formData);
     // フォームに入力された内容をサーバー側に送信します。
     XHR.onload = () => {
+      const list = document.getElementById("list");
+      // 新しいメモを挿入するための要素を取得して、変数listに格納しています。
       const item = XHR.response.post;
       const html = `
         <div class="post">
@@ -27,6 +29,8 @@ function post (){
             ${item.content}
           </div>
         </div>`;
+      list.insertAdjacentHTML("afterend", html);
+      // insertAdjacentHTMLメソッドの第一引数にafterendを指定することで、変数listに格納された要素の直後に生成したHTMLを挿入しています。
     };
     // onloadプロパティを用いて、レスポンスの受信に成功したときの処理
   });
