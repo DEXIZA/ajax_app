@@ -21,7 +21,6 @@ function post (){
       // 新しいメモを挿入するための要素を取得して、変数listに格納しています。
       const formText = document.getElementById("content");
       // リセットの対象となるフォームの要素contentを取得して、変数formTextに格納しています。
-      console.log(formText.value);
       const item = XHR.response.post;
       const html = `
         <div class="post">
