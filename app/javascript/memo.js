@@ -33,6 +33,8 @@ function post (){
         </div>`;
       list.insertAdjacentHTML("afterend", html);
       // insertAdjacentHTMLメソッドの第一引数にafterendを指定することで、変数listに格納された要素の直後に生成したHTMLを挿入しています。
+      formText.value = "";
+      // formTextのvalue属性に空の文字列を指定することで、フォームの中身をリセットしています
     };
     // onloadプロパティを用いて、レスポンスの受信に成功したときの処理
   });
