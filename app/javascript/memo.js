@@ -1,7 +1,9 @@
 function post (){
   const submit = document.getElementById("submit");
   // index.html.erbより、getElementByIdメソッドで取得した投稿ボタンの要素を変数submitに格納しています。
-  submit.addEventListener("click", () => {
+  submit.addEventListener("click", (e) => {
+    e.preventDefault();
+    // 説明１
     const form = document.getElementById("form");
     // getElementByIdメソッドを用いて、フォームの要素を取得します。
     const formData = new FormData(form);
@@ -54,5 +56,19 @@ function post (){
 // send()センドメソッド
   // send()メソッドとは、リクエストを送信するメソッドです。
   // XMLHttpRequestオブジェクトのメソッドの一種です。
+
+//preventDefault()プリベントデフォルトメソッド
+  // preventDefault()メソッドとは、既定のイベントを無効化するためのメソッドです。
+  // 既定のイベントとは、「投稿ボタンをクリックする」のようなものを指します。
+  // 今回は投稿ボタンのクリックを無効化するためにpreventDefaultを用います。
+
+//   説明１
+//   submit.addEventListener("click", (e) => {
+//     e.preventDefault();
+// eはイベントオブジェクトといい、イベント発生時の情報を持ったオブジェクトです。
+// 今回だと、「投稿ボタンをクリックした」という情報を持ったオブジェクトということになります。
+// なお、3行目のeはどんな文字列を指定してもOKです。慣例的にeventの頭文字eが多く用いられます。
+// 今回、preventDefault()の対象をeとすることにより、「投稿ボタンをクリックした」という現象を無効化しています。
+// 「投稿ボタンをクリックした」という現象を無効化するのは、クリックした直後にブラウザからリクエストが送信されることを防ぎたいからです。
 
       
