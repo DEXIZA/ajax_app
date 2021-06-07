@@ -13,3 +13,8 @@ function post (){
 
  
  window.addEventListener('load', post);
+
+// メモ
+//  FormDataフォームデータオブジェクト
+// FormDataとは、フォームに入力された値を取得できるオブジェクトのことです。
+// new FormData(フォームの要素);のように記述することでオブジェクトを生成し、引数にフォームの要素を渡すことで、そのフォームに入力された値を取得できます。
