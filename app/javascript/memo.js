@@ -17,7 +17,6 @@ function post (){
     XHR.send(formData);
     // フォームに入力された内容をサーバー側に送信します。
     XHR.onload = () => {
-      console.log(XHR.response);
     };
     // onloadプロパティを用いて、レスポンスの受信に成功したときの処理
   });
