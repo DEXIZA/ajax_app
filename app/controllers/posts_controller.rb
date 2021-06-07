@@ -12,5 +12,6 @@ class PostsController < ApplicationController
     Post.create(content: params[:content])
     redirect_to action: :index  
     # 投稿した後にリダレクトするようにする
+    # レスポンスでindex.html.erbを返すように指定
   end
 end
