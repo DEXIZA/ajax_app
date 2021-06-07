@@ -10,10 +10,9 @@ class PostsController < ApplicationController
 
   def create
     post = Post.create(content: params[:content])
-    # renderメソッドを用いて、レスポンスのデータフォーマットとしてJSONを指定
+    # renderメソッドを用いて、レスポンスのデータフォーマットとしてJSONを指定したい
     # 新たに投稿されたメモの内容を変数postに格納
-    redirect_to action: :index  
-    # 投稿した後にリダレクトするようにする
-    # レスポンスでindex.html.erbを返すように指定
+    render json:{ post: post }
+    # 直前で定義した変数postの値を、postというキーとセットでJavaScriptに送信しています。
   end
 end
