@@ -17,6 +17,16 @@ function post (){
     XHR.send(formData);
     // フォームに入力された内容をサーバー側に送信します。
     XHR.onload = () => {
+      const item = XHR.response.post;
+      const html = `
+        <div class="post">
+          <div class="post-date">
+            投稿日時：${item.created_at}
+          </div>
+          <div class="post-content">
+            ${item.content}
+          </div>
+        </div>`;
     };
     // onloadプロパティを用いて、レスポンスの受信に成功したときの処理
   });
@@ -82,3 +92,16 @@ function post (){
   // responseプロパティとは、サーバーからのレスポンスに関する情報が格納されたプロパティのことです。
   // XMLHttpRequestオブジェクトのプロパティの一種です。
       
+// insertAdjacentHTMLインサート アジェイセント エイチティーエムエルメソッド
+  // insertAdjacentHTMLメソッドとは、HTMLをある要素の指定した箇所に挿入するメソッドです。
+  // HTMLを挿入したい要素に対して使うメソッドで、第一引数にHTMLを挿入したい位置、第二引数に挿入したいHTMLを記述します。
+  
+  // 第一引数に指定できるのは以下の4つです。
+  
+  // 指定可能な文字列	意味
+  // beforebegin	要素の直前
+  // afterbegin	要素内部の、最初の子要素の直前
+  // beforeend	要素内部の、最後の子要素の直後
+  // afterend	要素の直後
+
+  // <挿入したい要素名>.insertAdjacentHTML(挿入したい位置,挿入したいHTML);
