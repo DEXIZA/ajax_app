@@ -17,6 +17,7 @@ function post (){
     XHR.send(formData);
     // フォームに入力された内容をサーバー側に送信します。
     XHR.onload = () => {
+      console.log(XHR.response);
     };
     // onloadプロパティを用いて、レスポンスの受信に成功したときの処理
   });
@@ -77,7 +78,7 @@ function post (){
 // onloadオンロードプロパティ
   // onloadプロパティとは、リクエストの送信が成功したときに呼び出されるプロパティのことです。XMLHttpRequestオブジェクトのプロパティの一種です。
   // onloadプロパティで、リクエストの送信に成功したときに行う処理を定義します。
-  
+
 // responseレスポンスプロパティ
   // responseプロパティとは、サーバーからのレスポンスに関する情報が格納されたプロパティのことです。
   // XMLHttpRequestオブジェクトのプロパティの一種です。
