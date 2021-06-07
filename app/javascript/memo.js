@@ -28,8 +28,9 @@ function post (){
     // 新たに生成したFormDataオブジェクトを変数formDataに格納しています。
     const XHR = new XMLHttpRequest();
     // 新たに生成したXMLHttpRequestオブジェクトを変数XHRに格納しています。
-    XHR.open("POST", "/posts", true);
+    XHR.open("POST", "/post", true);  
     // リクエストの内容を指定できました。
+    //「posts」→「post」にする、エラーの表示の為？
     XHR.responseType = "json";
     // サーバーからのレスポンスの形式を指定
     XHR.send(formData);
