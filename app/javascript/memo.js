@@ -4,6 +4,8 @@ function post (){
   submit.addEventListener("click", () => {
     const form = document.getElementById("form");
     // getElementByIdメソッドを用いて、フォームの要素を取得します。
+    const formData = new FormData(form);
+    // 新たに生成したFormDataオブジェクトを変数formDataに格納しています。
   });
   // 「投稿ボタンがクリックされたこと」を認識するために、submit.addEventListenerと記述します。
   // 今回は「クリックされた」というイベントを認識したいため、addEventListenerメソッドの第一引数にはclickイベントを指定します。そして、第二引数に実行したい処理を記述しましょう。
