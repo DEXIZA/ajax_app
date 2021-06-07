@@ -35,6 +35,15 @@ function post (){
     XHR.send(formData);
     // フォームに入力された内容をサーバー側に送信します。
     XHR.onload = () => {
+      if (XHR.status != 200) {
+        alert(`Error ${XHR.status}: ${XHR.statusText}`);
+        return null;
+      };
+      // XHR.statusには、HTTPステータスコードが格納されます。
+      // また、XHR.statusTextには、ステータスコードに応じたメッセージが格納されます。この格納されているメッセージについては、この後のカリキュラムで確認します。
+      // 28行目では、return null;を定義しています。
+      // return null;によってJavaScriptの処理から抜け出すことができます。
+      // エラーが出た場合に、これ以降に記述されている処理を行わないようにすることが目的です。
       const list = document.getElementById("list");
       // 新しいメモを挿入するための要素を取得して、変数listに格納しています。
       const formText = document.getElementById("content");
