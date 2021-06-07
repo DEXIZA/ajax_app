@@ -1,3 +1,21 @@
+const buildHTML = (XHR) => {
+  const item = XHR.response.post;
+  const html = `
+    <div class="post">
+      <div class="post-date">
+        投稿日時：${item.created_at}
+      </div>
+      <div class="post-content">
+        ${item.content}
+      </div>
+    </div>`;
+  return html;
+};
+// 12行目では、関数buildHTMLの返り値にhtmlを指定しています。
+// ここでいうhtmlとは、3〜11行目で定義した変数htmlのことを表しています。つまり、投稿後に新たに生成されたHTMLのことです。
+
+
+
 function post (){
   const submit = document.getElementById("submit");
   // index.html.erbより、getElementByIdメソッドで取得した投稿ボタンの要素を変数submitに格納しています。
@@ -21,18 +39,9 @@ function post (){
       // 新しいメモを挿入するための要素を取得して、変数listに格納しています。
       const formText = document.getElementById("content");
       // リセットの対象となるフォームの要素contentを取得して、変数formTextに格納しています。
-      const item = XHR.response.post;
-      const html = `
-        <div class="post">
-          <div class="post-date">
-            投稿日時：${item.created_at}
-          </div>
-          <div class="post-content">
-            ${item.content}
-          </div>
-        </div>`;
-      list.insertAdjacentHTML("afterend", html);
-      // insertAdjacentHTMLメソッドの第一引数にafterendを指定することで、変数listに格納された要素の直後に生成したHTMLを挿入しています。
+        list.insertAdjacentHTML("afterend", buildHTML(XHR));
+        // insertAdjacentHTMLメソッドの第一引数にafterendを指定することで、変数listに格納された要素の直後に生成したHTMLを挿入しています。
+          // buildHTML(XHR)で一番最初にあるhtmlをもってきている
       formText.value = "";
       // formTextのvalue属性に空の文字列を指定することで、フォームの中身をリセットしています
     };
