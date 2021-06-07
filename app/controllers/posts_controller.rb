@@ -10,8 +10,9 @@ class PostsController < ApplicationController
 
   def create
     post = Post.create(content: params[:content])
-    # renderメソッドを用いて、レスポンスのデータフォーマットとしてJSONを指定したい
     # 新たに投稿されたメモの内容を変数postに格納
+      # renderメソッドを用いて、レスポンスのデータフォーマットとしてJSONを指定したい為にpostに代入
+      # データベースのカラムにあるデータを全て格納している
     render json:{ post: post }
     # 直前で定義した変数postの値を、postというキーとセットでJavaScriptに送信しています。
   end
